@@ -1,0 +1,88 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+html,
+body {
+  height: 90%;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #030321;
+  font-family: Arial;
+}
+
+.container {
+  display: flex;
+  /*   border:1px solid red; */
+  height: 7%;
+  align-items: center;
+}
+
+svg {
+  display: block;
+  font: 5.3em "Montserrat";
+  width: 1000px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.text-copy {
+  fill: none;
+  stroke: white;
+  stroke-dasharray: 6% 29%;
+  stroke-width: 5px;
+  stroke-dashoffset: 0%;
+  animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1) {
+  stroke: #4d163d;
+  animation-delay: -1;
+}
+
+.text-copy:nth-child(2) {
+  stroke: #840037;
+  animation-delay: -2s;
+}
+
+.text-copy:nth-child(3) {
+  stroke: #bd0034;
+  animation-delay: -3s;
+}
+
+.text-copy:nth-child(4) {
+  stroke: #bd0034;
+  animation-delay: -4s;
+}
+
+.text-copy:nth-child(5) {
+  stroke: #fdb731;
+  animation-delay: -5s;
+}
+
+@keyframes stroke-offset {
+  100% {
+    stroke-dashoffset: -35%;
+  }
+}
+
+.d31 {
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+  background: #82707c;
+  position: relative;
+  transform: rotate(20deg);
+}
+.d31:before {
+  content: "";
+  height: 80px;
+  width: 80px;
+  background: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(135deg);
+}
