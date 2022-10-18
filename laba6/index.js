@@ -1,22 +1,29 @@
-let screen = document.getElementById("screen");
-buttons = document.querySelectorAll("button");
-let screenValue = "";
-for (item of buttons) {
-  item.addEventListener("click", (e) => {
-    buttonText = e.target.innerText;
-    console.log("Button text is ", buttonText);
-    if (buttonText == "X") {
-      buttonText = "*";
-      screenValue += buttonText;
-      screen.value = screenValue;
-    } else if (buttonText == "C") {
-      screenValue = "";
-      screen.value = screenValue;
-    } else if (buttonText == "=") {
-      screen.value = eval(screenValue);
-    } else {
-      screenValue += buttonText;
-      screen.value = screenValue;
-    }
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("test");
+  var form = document.querySelector(".calc");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
   });
-}
+  var res_field = document.querySelector(".calc__result-field");
+
+  var btn_num = document.querySelectorAll(".js--btn-add-res");
+  var btn_reset = document.querySelector(".js--btn-reset");
+  var btn_calc = document.querySelector(".js--btn-calc");
+
+  for (i = 0; i < btn_num.length; i++) {
+    btn_num[i].addEventListener("click", function (e) {
+      e.preventDefault();
+      res_field.value += this.innerHTML;
+    });
+  }
+
+  btn_reset.addEventListener("click", function (e) {
+    e.preventDefault();
+    res_field.value = "";
+  });
+
+  btn_calc.addEventListener("click", function (e) {
+    e.preventDefault();
+    res_field.value = eval(res_field.value);
+  });
+});
